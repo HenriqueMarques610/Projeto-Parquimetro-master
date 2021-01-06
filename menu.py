@@ -6,15 +6,6 @@ from datetime import datetime
     # Access the member variables of datetime object to print date & time information
     #print(dateTimeObj.year, '/', dateTimeObj.month, '/', dateTimeObj.day)
     #print(dateTimeObj.hour, ':', dateTimeObj.minute)
- 
-lzona1 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-ldzona1=lzona1.count(0)
-
-lzona2 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-ldzona2=lzona2.count(0)
-
-lzona3 = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-ldzona3=lzona3.count(0)
 
 def diasDaSemana():
     dateTimeObj = datetime.now()
@@ -101,9 +92,9 @@ def menu_zonas():
     print("---------------------------")
     print("-----      Zonas      -----")
     print("")
-    print("Zona 1: ",ldzona1)
-    print("Zona 2: ",ldzona2)
-    print("Zona 3: ",ldzona3)
+    print("Zona 1: ")
+    print("Zona 2: ")
+    print("Zona 3: ")
     print("4. Voltar")
     print("0. Sair")
     print("")
@@ -224,7 +215,7 @@ def menu_zona1():
     print("")
     print("Preço (Para Duração Maxima): ",preco)
     print("Duração Maxima (Minutos): ",duracao)
-    print("Lugares Disponiveis:",ldzona1)
+    print("Lugares Disponiveis:")
     print("1. Estacionar")
     print("4. Voltar")
     print("0. Sair")
@@ -245,18 +236,18 @@ def menu_zona1():
 
 def menu_zona1_estacionar():
 
-        resto=1
-        tempo=0.45
+        resto=1.15
+        duracao=0.45
         valor = float(input("Insira a quantia desejada -> "))
-        estacionamento= valor*tempo/resto
+        estacionamento= valor*duracao/resto
         if (valor < 0):
             print("Introduza um valor positivo.")
-        if (estacionamento > 0.45):
-            print("Só pode estacionar por 45 minutos, introduza uma quantia mais baixa.")
         if (estacionamento < 0):
             print("Introduza uma quantia mais alta.")
-        
-        print("Pode estacionar por ", round(estacionamento,2),"minutos")
+        if (estacionamento > 0.45):
+            print("Só pode estacionar por 45 minutos, introduza uma quantia mais baixa.")
+        else:
+            print("Pode estacionar por ", round(estacionamento,2),"minutos")
         
 
 def menu_zona2():
@@ -266,7 +257,7 @@ def menu_zona2():
     print("-----      Zona 2      -----")
     print("")
     print("Preço: ",preco, "Duração Maxima (Horas): ",duracao)
-    print("Lugares Disponiveis:",ldzona2)
+    print("Lugares Disponiveis:")
     print("1. Estacionar")
     print("4. Voltar")
     print("0. Sair")
@@ -292,12 +283,12 @@ def menu_zona2_estacionar():
         estacionamento= valor*duracao/resto
         if (valor < 0):
             print("Introduza um valor positivo.")
-        if (estacionamento > 2):
-            print("Só pode estacionar por 2 horas, introduza uma quantia mais baixa.")
         if (estacionamento < 0):
             print("Introduza uma quantia mais alta.")
-        
-        print("Pode estacionar por ", round(estacionamento,2),"horas")
+        if (estacionamento > 2):
+            print("Só pode estacionar por 2 horas, introduza uma quantia mais baixa.")
+        else:
+            print("Pode estacionar por ", round(estacionamento,2),"horas")
         
 
 def menu_zona3():
@@ -306,7 +297,7 @@ def menu_zona3():
     print("-----      Zona 3      -----")
     print("")
     print("Preço: ",preco, "Sem Duração Maxima ")
-    print("Lugares Disponiveis:",ldzona3)
+    print("Lugares Disponiveis:")
     print("1. Estacionar")
     print("4. Voltar")
     print("0. Sair")
