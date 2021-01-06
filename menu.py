@@ -255,7 +255,7 @@ def menu_zona1_estacionar():
             print("Só pode estacionar por 45 minutos, introduza uma quantia mais baixa.")
         if (estacionamento < 0):
             print("Introduza uma quantia mais alta.")
-            
+        
         print("Pode estacionar por ", round(estacionamento,2),"minutos")
         
 
