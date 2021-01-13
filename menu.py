@@ -8,6 +8,7 @@ from datetime import datetime
     #print(dateTimeObj.hour, ':', dateTimeObj.minute)
 
 def diasDaSemana():
+    
     dateTimeObj = datetime.now()
     diaSemana = dateTimeObj.today().weekday()       # 0 segunda, 1 terca, 2 quarta, 3 quinta, 4 sexta, 5 sabado, 6 domingo
     hora = dateTimeObj.hour
@@ -237,10 +238,10 @@ def menu_zona1():
 def menu_zona1_estacionar():
 
         resto=1.15
-        duracao=0.45
-        valor = float(input("Insira a quantia desejada -> "))
-        estacionamento= valor*duracao/resto
-        if (valor < 0):
+        duracao=1
+        valorz1 = float(input("Insira a quantia desejada -> "))
+        estacionamento= valorz1*duracao/resto
+        if (valorz1 < 0):
             print("Introduza um valor positivo.")
         if (estacionamento < 0):
             print("Introduza uma quantia mais alta.")
@@ -248,6 +249,7 @@ def menu_zona1_estacionar():
             print("Só pode estacionar por 45 minutos, introduza uma quantia mais baixa.")
         else:
             print("Pode estacionar por ", round(estacionamento,2),"minutos")
+            menu_recibo()
         
 
 def menu_zona2():
@@ -279,9 +281,9 @@ def menu_zona2_estacionar():
 
         resto=1
         duracao=2
-        valor = float(input("Insira a quantia desejada -> "))
-        estacionamento= valor*duracao/resto
-        if (valor < 0):
+        valorz2 = float(input("Insira a quantia desejada -> "))
+        estacionamento= valorz2*duracao/resto
+        if (valorz2 < 0):
             print("Introduza um valor positivo.")
         if (estacionamento < 0):
             print("Introduza uma quantia mais alta.")
@@ -289,6 +291,7 @@ def menu_zona2_estacionar():
             print("Só pode estacionar por 2 horas, introduza uma quantia mais baixa.")
         else:
             print("Pode estacionar por ", round(estacionamento,2),"horas")
+            menu_recibo()
         
 
 def menu_zona3():
@@ -316,12 +319,22 @@ def menu_zona3():
         exit 
 
 def menu_zona3_estacionar():
-        valor = float(input("Insira a quantia desejada -> "))
-        if (valor < 0):
+        valorz3 = float(input("Insira a quantia desejada -> "))
+        if (valorz3 < 0):
             print("Introduza um valor positivo.")
-        print("Pode estacionar") 
+        print("Pode estacionar")
+        menu_recibo()
         
-    
+def menu_recibo():
+    print("----------------------------------------5----")
+    print("----- Fim de Estacionamento Autorizado -----")
+    print("----- Data -----")
+    print("     ",dateTimeObj.day,'/', dateTimeObj.month,'/', dateTimeObj.year)
+    print("----- Hora -----")
+    print("    ",dateTimeObj.hour,'H' ,':', dateTimeObj.minute,"M")
+    print("    ",valorz1,valorz2,valorz3)
+    print("")
+
 def menu_historicoCLIENTE():
     print("-------------------------------")
     print("-----      Historico      -----")
